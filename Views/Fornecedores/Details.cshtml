@@ -1,11 +1,5 @@
 ﻿@model CadastrosFornecedores.Models.Fornecedor
 
-@{
-    ViewData["Title"] = "Details";
-}
-
-<h1>Details</h1>
-
 <div>
     <h4>Fornecedor</h4>
     <hr />
@@ -17,28 +11,16 @@
             @Html.DisplayFor(model => model.Cpf_Cnpj)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.HoraCadastro)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.HoraCadastro)
-        </dd>
-        <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Telefone)
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Telefone)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.PessoaFisica)
+            @Html.DisplayNameFor(model => model.Email)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.PessoaFisica)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.RG)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.RG)
+            @Html.DisplayFor(model => model.Email)
         </dd>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.DataNascimento)
@@ -50,7 +32,7 @@
             @Html.DisplayNameFor(model => model.Empresa)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Empresa.Cnpj)
+            @Html.DisplayFor(model => model.Empresa.Nome)
         </dd>
     </dl>
 </div>

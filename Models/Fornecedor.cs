@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
 namespace CadastrosFornecedores.Models
@@ -8,27 +9,22 @@ namespace CadastrosFornecedores.Models
         public int Id { get; set; }
 
         [Required]
+        [DisplayName("CPF ou CNPJ")]
         public string Cpf_Cnpj { get; set; }
 
         [Required]
-        [DataType(DataType.Date)] 
-        [DisplayFormat(DataFormatString = "0:dd/MM/yyyy hh:MM:ss")]
-        public DateTime HoraCadastro { get; set; }
-
-        [Required]
-        [DataType(DataType.PhoneNumber)] 
+        [DisplayName("Telefone com DDD")]
         public string Telefone { get; set; }
 
         [Required]
-        public bool PessoaFisica { get; set; }
+        [DisplayName("Email")]
+        public string Email { get; set; }
 
         [Required]
-        public string RG { get; set; }
-
-        [Required]
+        [DisplayName("Data de Nascimento")]
         [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString ="0:dd/MM/yyyy")]
         public DateTime DataNascimento { get; set; }
+
 
         public int EmpresaId { get; set; }
         public Empresa Empresa { get; set; }

@@ -1,11 +1,5 @@
 ﻿@model CadastrosFornecedores.Models.Fornecedor
 
-@{
-    ViewData["Title"] = "Edit";
-}
-
-<h1>Edit</h1>
-
 <h4>Fornecedor</h4>
 <hr />
 <div class="row">
@@ -19,24 +13,14 @@
                 <span asp-validation-for="Cpf_Cnpj" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="HoraCadastro" class="control-label"></label>
-                <input asp-for="HoraCadastro" class="form-control" />
-                <span asp-validation-for="HoraCadastro" class="text-danger"></span>
-            </div>
-            <div class="form-group">
                 <label asp-for="Telefone" class="control-label"></label>
                 <input asp-for="Telefone" class="form-control" />
                 <span asp-validation-for="Telefone" class="text-danger"></span>
             </div>
-            <div class="form-group form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" asp-for="PessoaFisica" /> @Html.DisplayNameFor(model => model.PessoaFisica)
-                </label>
-            </div>
             <div class="form-group">
-                <label asp-for="RG" class="control-label"></label>
-                <input asp-for="RG" class="form-control" />
-                <span asp-validation-for="RG" class="text-danger"></span>
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="DataNascimento" class="control-label"></label>

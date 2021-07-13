@@ -19,14 +19,16 @@ namespace CadastrosFornecedores.Controllers
             _context = context;
         }
 
-        // GET: Fornecedors
+        // GET: Fornecedores
         public async Task<IActionResult> Index()
         {
+            
             var fornecedorContext = _context.Fornecedores.Include(f => f.Empresa);
+
             return View(await fornecedorContext.ToListAsync());
         }
 
-        // GET: Fornecedors/Details/5
+        // GET: Fornecedores/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -45,17 +47,17 @@ namespace CadastrosFornecedores.Controllers
             return View(fornecedor);
         }
 
-        // GET: Fornecedors/Create
+        // GET: Fornecedores/Create
         public IActionResult Create()
         {
-            ViewData["EmpresaId"] = new SelectList(_context.Empresas, "Id", "Cnpj");
+            ViewData["EmpresaId"] = new SelectList(_context.Empresas, "Id", "Nome");
             return View();
         }
 
-        // POST: Fornecedors/Create       
+        // POST: Fornecedores/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Cpf_Cnpj,HoraCadastro,Telefone,PessoaFisica,RG,DataNascimento,EmpresaId")] Fornecedor fornecedor)
+        public async Task<IActionResult> Create([Bind("Id,Cpf_Cnpj,Telefone,Email,DataNascimento,EmpresaId")] Fornecedor fornecedor)
         {
             if (ModelState.IsValid)
             {
@@ -63,13 +65,11 @@ namespace CadastrosFornecedores.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-
-            
-            ViewData["EmpresaId"] = new SelectList(_context.Empresas, "Id", "Cnpj", fornecedor.EmpresaId);
+            ViewData["EmpresaId"] = new SelectList(_context.Empresas, "Id", "Nome", fornecedor.EmpresaId);
             return View(fornecedor);
         }
 
-        // GET: Fornecedors/Edit/5
+        // GET: Fornecedores/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -82,14 +82,14 @@ namespace CadastrosFornecedores.Controllers
             {
                 return NotFound();
             }
-            ViewData["EmpresaId"] = new SelectList(_context.Empresas, "Id", "Cnpj", fornecedor.EmpresaId);
+            ViewData["EmpresaId"] = new SelectList(_context.Empresas, "Id", "Nome", fornecedor.EmpresaId);
             return View(fornecedor);
         }
 
-        // POST: Fornecedors/Edit/5
+        // POST: Fornecedores/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Cpf_Cnpj,HoraCadastro,Telefone,PessoaFisica,RG,DataNascimento,EmpresaId")] Fornecedor fornecedor)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Cpf_Cnpj,Telefone,Email,DataNascimento,EmpresaId")] Fornecedor fornecedor)
         {
             if (id != fornecedor.Id)
             {
@@ -116,11 +116,11 @@ namespace CadastrosFornecedores.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["EmpresaId"] = new SelectList(_context.Empresas, "Id", "Cnpj", fornecedor.EmpresaId);
+            ViewData["EmpresaId"] = new SelectList(_context.Empresas, "Id", "Nome", fornecedor.EmpresaId);
             return View(fornecedor);
         }
 
-        // GET: Fornecedors/Delete/5
+        // GET: Fornecedores/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -139,7 +139,7 @@ namespace CadastrosFornecedores.Controllers
             return View(fornecedor);
         }
 
-        // POST: Fornecedors/Delete/5
+        // POST: Fornecedores/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)

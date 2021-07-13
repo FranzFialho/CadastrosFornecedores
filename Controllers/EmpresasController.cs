@@ -49,7 +49,7 @@ namespace CadastrosFornecedores.Controllers
             return View();
         }
 
-        // POST: Empresas/Create    
+        // POST: Empresas/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,UF,Nome,Cnpj")] Empresa empresa)

@@ -1,11 +1,5 @@
 ﻿@model IEnumerable<CadastrosFornecedores.Models.Fornecedor>
 
-@{
-    ViewData["Title"] = "Index";
-}
-
-<h1>Index</h1>
-
 <p>
     <a asp-action="Create">Create New</a>
 </p>
@@ -16,16 +10,10 @@
                 @Html.DisplayNameFor(model => model.Cpf_Cnpj)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.HoraCadastro)
-            </th>
-            <th>
                 @Html.DisplayNameFor(model => model.Telefone)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.PessoaFisica)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.RG)
+                @Html.DisplayNameFor(model => model.Email)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.DataNascimento)
@@ -43,22 +31,16 @@
                 @Html.DisplayFor(modelItem => item.Cpf_Cnpj)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.HoraCadastro)
-            </td>
-            <td>
                 @Html.DisplayFor(modelItem => item.Telefone)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.PessoaFisica)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.RG)
+                @Html.DisplayFor(modelItem => item.Email)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.DataNascimento)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Empresa.Cnpj)
+                @Html.DisplayFor(modelItem => item.Empresa.Nome)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
