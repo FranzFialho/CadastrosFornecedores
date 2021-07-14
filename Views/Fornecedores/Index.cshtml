@@ -1,4 +1,6 @@
-﻿@model IEnumerable<CadastrosFornecedores.Models.Fornecedor>
+﻿@model X.PagedList.IPagedList<CadastrosFornecedores.Models.Fornecedor>
+@using X.PagedList.Mvc.Core
+
 
 @{
     ViewData["Title"] = "Relação de Fornecedores";
@@ -14,13 +16,13 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Nome)
+                @Html.DisplayName("Nome")
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Cpf_Cnpj)
+                @Html.DisplayName("CPF / CNPJ")
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Empresa)
+                @Html.DisplayName("Empresa")
             </th>
             <th></th>
         </tr>
@@ -47,3 +49,7 @@
         }
     </tbody>
 </table>
+
+Página @Model.PageNumber de @Model.PageCount
+
+@Html.PagedListPager(Model, pagina => Url.Action("Index", new { pagina }))

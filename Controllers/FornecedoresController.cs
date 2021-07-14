@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using CadastrosFornecedores.Database;
 using CadastrosFornecedores.Models;
+using X.PagedList;
 
 namespace CadastrosFornecedores.Controllers
 {
@@ -20,12 +21,14 @@ namespace CadastrosFornecedores.Controllers
         }
 
         // GET: Fornecedores
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int? pagina)
         {
-            
+            const int itensPorPagina = 3;
+            int numeroPagina = (pagina ?? 1);
+
             var fornecedorContext = _context.Fornecedores.Include(f => f.Empresa);
 
-            return View(await fornecedorContext.ToListAsync());
+            return View(await fornecedorContext.ToPagedListAsync(numeroPagina, itensPorPagina));
         }
 
         // GET: Fornecedores/Details/5
