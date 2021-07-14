@@ -57,7 +57,7 @@ namespace CadastrosFornecedores.Controllers
         // POST: Fornecedores/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Cpf_Cnpj,Telefone,Email,DataNascimento,EmpresaId")] Fornecedor fornecedor)
+        public async Task<IActionResult> Create([Bind("Id,Nome,Cpf_Cnpj,Telefone,Email,DataNascimento,EmpresaId")] Fornecedor fornecedor)
         {
             if (ModelState.IsValid)
             {
@@ -89,7 +89,7 @@ namespace CadastrosFornecedores.Controllers
         // POST: Fornecedores/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Cpf_Cnpj,Telefone,Email,DataNascimento,EmpresaId")] Fornecedor fornecedor)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Nome,Cpf_Cnpj,Telefone,Email,DataNascimento,EmpresaId")] Fornecedor fornecedor)
         {
             if (id != fornecedor.Id)
             {

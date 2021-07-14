@@ -4,14 +4,16 @@ using CadastrosFornecedores.Database;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace CadastrosFornecedores.Migrations
 {
     [DbContext(typeof(FornecedorContext))]
-    partial class FornecedorContextModelSnapshot : ModelSnapshot
+    [Migration("20210714010627_NomeModel")]
+    partial class NomeModel
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

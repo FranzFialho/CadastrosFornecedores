@@ -9,11 +9,15 @@ namespace CadastrosFornecedores.Models
         public int Id { get; set; }
 
         [Required]
-        [DisplayName("CPF ou CNPJ")]
+        [DisplayName("Nome")]
+        public string Nome { get; set; }
+
+        [Required]
+        [DisplayName("CPF / CNPJ")]
         public string Cpf_Cnpj { get; set; }
 
         [Required]
-        [DisplayName("Telefone com DDD")]
+        [DisplayName("Nº Telefone")]
         public string Telefone { get; set; }
 
         [Required]
