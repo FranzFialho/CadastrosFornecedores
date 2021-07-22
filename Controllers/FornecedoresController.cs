@@ -23,6 +23,7 @@ namespace CadastrosFornecedores.Controllers
         // GET: Fornecedores
         public async Task<IActionResult> Index(int? pagina)
         {
+
             const int itensPorPagina = 3;
             int numeroPagina = (pagina ?? 1);
 

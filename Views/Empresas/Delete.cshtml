@@ -1,8 +1,7 @@
 ﻿@model CadastrosFornecedores.Models.Empresa
 
-<h3>Are you sure you want to delete this?</h3>
+<h3>Deseja realmente deletar o cadastro?</h3>
 <div>
-    <h4>Empresa</h4>
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
@@ -27,7 +26,7 @@
     
     <form asp-action="Delete">
         <input type="hidden" asp-for="Id" />
-        <input type="submit" value="Delete" class="btn btn-danger" /> |
-        <a asp-action="Index">Back to List</a>
+        <a class="btn btn-dark" asp-action="Index">Voltar</a>
+        <input type="submit" value="Deletar cadastrar" class="btn btn-danger" />
     </form>
 </div>

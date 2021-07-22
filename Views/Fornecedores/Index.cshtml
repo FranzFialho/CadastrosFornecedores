@@ -9,7 +9,7 @@
 <h2>@ViewData["Title"]</h2>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a class="btn btn-primary" asp-action="Create">Criar Cadastro</a>
 </p>
 
 <table class="table table-striped table-hover">
@@ -19,7 +19,7 @@
                 @Html.DisplayName("Nome")
             </th>
             <th>
-                @Html.DisplayName("CPF / CNPJ")
+                @Html.DisplayName("CPF")
             </th>
             <th>
                 @Html.DisplayName("Empresa")
@@ -40,10 +40,10 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.Empresa.Nome)
                 </td>
-                <td>
-                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                <td>                  
+                    <a class="btn btn-warning" asp-action="Edit" asp-route-id="@item.Id">Editar </a> 
+                    <a class="btn btn-info" asp-action="Details" asp-route-id="@item.Id">Detalhes</a> 
+                    <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id">Deletar</a>
                 </td>
             </tr>
         }

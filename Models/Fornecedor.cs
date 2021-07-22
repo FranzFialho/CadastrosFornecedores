@@ -13,7 +13,7 @@ namespace CadastrosFornecedores.Models
         public string Nome { get; set; }
 
         [Required]
-        [DisplayName("CPF / CNPJ")]
+        [DisplayName("CPF")]
         public string Cpf_Cnpj { get; set; }
 
         [Required]
